@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DeepFusion - AI Deepfake Detection</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="D:\deepfake_detection_project\static\css\styles.css"/>
+  <script src="D:\deepfake_detection_project\static\js\script.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1><i class="fas fa-brain"></i> DeepFusion</h1>
+    
+    <div class="hamburger" id="hamburger">&#9776;</div>
+  
+    <nav id="navLinks">
+      <a href="#features"><i class="fas fa-star"></i> Features</a>
+      <a href="#upload" id="uploadNavLink"><i class="fas fa-upload"></i> Upload</a>
+      <a href="#how-it-works"><i class="fas fa-cogs"></i> How it Works</a>
+      <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+      <!-- <button id="clearBtn" class="clear-btn">Clear All</button> -->
+      <!-- <button onclick="document.body.classList.toggle('dark-mode')">Toggle Dark/Light Mode</button> -->
+      <!-- <button onclick="toggleTheme()">Toggle Dark/Light Mode</button> -->
+      <label class="theme-toggle-icon">
+        <input type="checkbox" id="themeSwitch" />
+        <span class="icon-slider">
+          <span class="sun">☀️</span>
+          <span class="moon">🌙</span>
+        </span>
+      </label>
+      
+    </nav>
+
+  </header>
+  
+  <section class="container" id="features">
+    <h2 class="section-title">Key Features</h2>
+    <div class="features">
+      <div class="card" id="uploadFeatureCard">
+        <h3>Upload Video</h3>
+        <p>Upload a face-centric video file for deepfake detection.</p>
+      </div>      
+      <div class="card" id="accuracyScoreCard">
+        <h3>Accuracy Score</h3>
+        <p>Displays prediction accuracy and confidence score.</p>
+      </div>
+      <div class="card" id="processOverviewCard">
+        <h3>Process Overview</h3>
+        <p>Shows CNN + LSTM + Attention-based model flow for each video.</p>
+      </div>      
+      <div class="card" id="videoPreviewCard">
+        <h3>Video Preview</h3>
+        <p>Instant preview of the uploaded video for confirmation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="container" id="upload">
+    <h2 class="section-title">Upload Video</h2>
+    <div id="uploadContainer">
+      <p>Click here to select a video (MP4)</p>
+      <input type="file" id="fileInput" accept="video/mp4" />
+    </div>
+    <button class="analyze-btn" id="analyzeBtn">Analyze</button>
+    <div id="resultDisplay"></div>
+  </section> -->
+
+  <section class="container" id="upload" style="display: none;">
+    <h2 class="section-title">Upload Video</h2>
+    <div id="uploadContainer">
+      <p>Click here to select a video (MP4)</p>
+      <input type="file" id="fileInput" accept="video/mp4" />
+    </div>
+    <button class="analyze-btn" id="analyzeBtn">Analyze</button>
+    <div id="resultDisplay"></div>
+    <div id="accuracyScoreDisplay" style="display: none; font-weight: bold; margin-top: 10px;"></div>
+  </section>
+  
+  <section class="container" id="how-it-works">
+    <!-- HEADERS ROW -->
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+      <h2 class="section-title" style="color: #00f8cc; margin-bottom: 20px;">
+        How the Process Works
+      </h2>
+      <h2 id="videoPreviewTitle" class="section-title" style="color: #00f8cc; display: none;">
+        Video Preview
+      </h2>
+    </div>
+  
+    <!-- CONTENT AREA -->
+    <div style="display: flex; gap: 30px; flex-wrap: wrap; align-items: flex-start;">
+      <!-- LEFT: Process Steps -->
+      <div id="analysisDemo" style="flex: 1; min-width: 300px;">
+        <div class="process-step">1. Extract Frames from Uploaded Video</div>
+        <div class="process-step">2. Face Detection and Cropping</div>
+        <div class="process-step">3. CNN (EfficientNetB4) Feature Extraction</div>
+        <div class="process-step">4. LSTM for Temporal Analysis</div>
+        <div class="process-step">5. Attention Layer for Final Prediction</div>
+        <div class="process-step">6. Predict the Final result(REAL/FAKE)</div>
+      </div>
+
+      <!-- RIGHT: Uploaded Video Preview -->
+      <div style="flex: 1; min-width: 300px;">
+        <div id="videoPreviewContainer" style="display: none; background-color: #121212; color: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
+          <video id="videoPreview" controls width="50%;"></video>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer id="contact">
+    <p>Email: support@deepfusion.ai</p>
+    <p>DY Patil College of Engineering & Technology, Kasaba Bawada, Kolhapur</p>
+    <p>Project by: Prashant Shirgave, Sanika Aralgundkar, Saniya Kondekar</p>
+    <p>Department of AIML</p>
+  </footer>
+
+  <link rel="stylesheet" href="/static/css/styles.css" />
+  <script src="/static/js/script.js"></script>
+
+</body>
+</html>
